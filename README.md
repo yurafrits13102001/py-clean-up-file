@@ -1,18 +1,19 @@
 - **Please note:** read [the guideline](https://github.com/mate-academy/py-task-guideline/blob/main/README.md)
 before starting.
-- Implement the task described [here](app/main.py)
 
 Create a custom context manager:
 
-In this task you should implement your own CleanUpFile context manager as a class. 
-It should remove the file if it exists after exiting it.
+In this task you should implement your own `CleanUpFile` context manager as a class.
+It should remove the file if it exists after exiting.
 
 Its constructor should take only the filename parameter. 
-Also CleanUpFile must have __enter__ (returns itself) and __exit__ (deletes a file if it exists) methods.
+Also CleanUpFile must have __enter__ and __exit__ methods.
 
 Example:
-```
-with open(“file.txt”, “w”) as file:
-    with CleanUpFile(“file.txt”):
+```python
+with CleanUpFile(“file.txt”):
+    with open(“file.txt”, “w”) as file:
         file.write(“Hello Mate!”)
 ```
+
+# after it file "file.txt" should not exist
